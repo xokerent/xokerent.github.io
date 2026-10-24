@@ -1,0 +1,69 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="body" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F4F6FA"/>
+      <stop offset="100%" stop-color="#B8C2D4"/>
+    </radialGradient>
+    <radialGradient id="rim" cx="50%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#FFB627" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#FFB627" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tuft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFDA7E"/>
+      <stop offset="100%" stop-color="#D88800"/>
+    </linearGradient>
+    <linearGradient id="star" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE680"/>
+      <stop offset="100%" stop-color="#FFB627"/>
+    </linearGradient>
+    <filter id="bodyShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="14"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- bouncy sparkles -->
+  <g opacity="0.9">
+    <path d="M 100 130 l 6 14 l 14 6 l -14 6 l -6 14 l -6 -14 l -14 -6 l 14 -6 z" fill="#FFB627"/>
+    <path d="M 500 110 l 5 11 l 11 5 l -11 5 l -5 11 l -5 -11 l -11 -5 l 11 -5 z" fill="#E94560"/>
+    <circle cx="80" cy="240" r="6" fill="#16C79A"/>
+    <circle cx="520" cy="260" r="6" fill="#A45AFF"/>
+    <circle cx="120" cy="380" r="4" fill="#3D8BFD"/>
+    <circle cx="490" cy="400" r="4" fill="#FFB627"/>
+  </g>
+
+  <!-- ground shadow (smaller — body is squashed up) -->
+  <ellipse cx="300" cy="555" rx="160" ry="20" fill="#000" opacity="0.22"/>
+
+  <!-- body — squashed +6% (slightly wider, slightly shorter) -->
+  <g filter="url(#bodyShadow)" transform="translate(300 320) scale(1.06 0.94) translate(-300 -320)">
+    <circle cx="300" cy="320" r="220" fill="url(#body)"/>
+  </g>
+  <g transform="translate(300 320) scale(1.06 0.94) translate(-300 -320)">
+    <circle cx="300" cy="320" r="220" fill="url(#rim)"/>
+    <path d="M 110 220 Q 300 90 490 220 Q 450 290 300 290 Q 150 290 110 220 Z" fill="#FFFFFF" opacity="0.40"/>
+  </g>
+
+  <!-- star-shaped eyes -->
+  <g transform="translate(240 295)">
+    <path d="M 0 -40 l 12 24 l 26 4 l -19 18 l 5 26 l -24 -12 l -24 12 l 5 -26 l -19 -18 l 26 -4 z" fill="url(#star)" stroke="#7A4900" stroke-width="2" stroke-opacity="0.5"/>
+    <circle cx="-2" cy="-6" r="4" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+  <g transform="translate(360 295)">
+    <path d="M 0 -40 l 12 24 l 26 4 l -19 18 l 5 26 l -24 -12 l -24 12 l 5 -26 l -19 -18 l 26 -4 z" fill="url(#star)" stroke="#7A4900" stroke-width="2" stroke-opacity="0.5"/>
+    <circle cx="-2" cy="-6" r="4" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <!-- cheek blush brighter -->
+  <ellipse cx="180" cy="390" rx="28" ry="16" fill="#FF6B85" opacity="0.7"/>
+  <ellipse cx="420" cy="390" rx="28" ry="16" fill="#FF6B85" opacity="0.7"/>
+
+  <!-- tuft tilted slightly -->
+  <g transform="translate(300 100) rotate(-8)">
+    <path d="M 0 0 Q -32 -55 -8 -110 Q 6 -75 30 -55 Q 18 -25 0 0 Z" fill="url(#tuft)" stroke="#7A4900" stroke-width="2" stroke-opacity="0.4"/>
+    <path d="M 0 0 Q -32 -55 -8 -110 Q -18 -65 -10 -30 Q -5 -10 0 0 Z" fill="#FFFFFF" opacity="0.35"/>
+  </g>
+</svg>

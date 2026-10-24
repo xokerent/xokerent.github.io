@@ -1,0 +1,78 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="body" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F4F6FA"/>
+      <stop offset="100%" stop-color="#B8C2D4"/>
+    </radialGradient>
+    <radialGradient id="rim" cx="50%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#A45AFF" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#A45AFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tuft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFDA7E"/>
+      <stop offset="100%" stop-color="#D88800"/>
+    </linearGradient>
+    <radialGradient id="eye" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2B3650"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="bodyShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="16"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="awe" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- aura of awe -->
+  <g filter="url(#awe)" opacity="0.7">
+    <circle cx="300" cy="320" r="260" fill="#A45AFF" opacity="0.12"/>
+    <circle cx="300" cy="320" r="200" fill="#FFFFFF" opacity="0.1"/>
+  </g>
+
+  <!-- ground shadow -->
+  <ellipse cx="300" cy="555" rx="150" ry="18" fill="#000" opacity="0.22"/>
+
+  <!-- body — stretched +8% upward (taller, slightly narrower) -->
+  <g filter="url(#bodyShadow)" transform="translate(300 300) scale(0.92 1.08) translate(-300 -300)">
+    <circle cx="300" cy="300" r="220" fill="url(#body)"/>
+  </g>
+  <g transform="translate(300 300) scale(0.92 1.08) translate(-300 -300)">
+    <circle cx="300" cy="300" r="220" fill="url(#rim)"/>
+    <path d="M 110 200 Q 300 70 490 200 Q 450 270 300 270 Q 150 270 110 200 Z" fill="#FFFFFF" opacity="0.40"/>
+  </g>
+
+  <!-- eyes — wide ovals -->
+  <ellipse cx="240" cy="290" rx="52" ry="74" fill="url(#eye)"/>
+  <ellipse cx="222" cy="266" rx="16" ry="22" fill="#FFFFFF" opacity="0.95"/>
+  <ellipse cx="255" cy="318" rx="8" ry="11" fill="#FFFFFF" opacity="0.65"/>
+  <ellipse cx="360" cy="290" rx="52" ry="74" fill="url(#eye)"/>
+  <ellipse cx="342" cy="266" rx="16" ry="22" fill="#FFFFFF" opacity="0.95"/>
+  <ellipse cx="375" cy="318" rx="8" ry="11" fill="#FFFFFF" opacity="0.65"/>
+
+  <!-- small "o" mouth shape suggested via subtle dot dimples (no real mouth per spec) -->
+  <ellipse cx="300" cy="420" rx="6" ry="9" fill="#1A1A1A" opacity="0.0"/>
+
+  <!-- cheek blush -->
+  <ellipse cx="180" cy="370" rx="24" ry="14" fill="#FF8FA3" opacity="0.55"/>
+  <ellipse cx="420" cy="370" rx="24" ry="14" fill="#FF8FA3" opacity="0.55"/>
+
+  <!-- tuft (slightly upright with awe) -->
+  <g transform="translate(300 80)">
+    <path d="M 0 0 Q -32 -55 -8 -130 Q 6 -90 30 -55 Q 18 -25 0 0 Z" fill="url(#tuft)" stroke="#7A4900" stroke-width="2" stroke-opacity="0.4"/>
+    <path d="M 0 0 Q -32 -55 -8 -130 Q -18 -75 -10 -30 Q -5 -10 0 0 Z" fill="#FFFFFF" opacity="0.35"/>
+  </g>
+
+  <!-- sparkles in awe -->
+  <g>
+    <circle cx="110" cy="180" r="5" fill="#A45AFF"/>
+    <circle cx="500" cy="200" r="5" fill="#3D8BFD"/>
+    <circle cx="80" cy="320" r="4" fill="#FFB627"/>
+    <circle cx="530" cy="350" r="4" fill="#16C79A"/>
+  </g>
+</svg>

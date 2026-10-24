@@ -1,0 +1,58 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="body" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#EEF2F7"/>
+      <stop offset="100%" stop-color="#A8B2C4"/>
+    </radialGradient>
+    <radialGradient id="rim" cx="50%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#3D8BFD" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#3D8BFD" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tuft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5CC9F"/>
+      <stop offset="100%" stop-color="#A07F4A"/>
+    </linearGradient>
+    <radialGradient id="eye" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2B3650"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="bodyShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- subtle slumped shadow -->
+  <ellipse cx="300" cy="555" rx="170" ry="18" fill="#000" opacity="0.2"/>
+
+  <!-- body — slightly drooped (shifted down a touch) -->
+  <g filter="url(#bodyShadow)" transform="translate(0 14)">
+    <circle cx="300" cy="320" r="220" fill="url(#body)"/>
+  </g>
+  <g transform="translate(0 14)">
+    <circle cx="300" cy="320" r="220" fill="url(#rim)"/>
+    <path d="M 110 220 Q 300 90 490 220 Q 450 290 300 290 Q 150 290 110 220 Z" fill="#FFFFFF" opacity="0.30"/>
+
+    <!-- eyes drifted inward, slight wince -->
+    <ellipse cx="252" cy="305" rx="34" ry="50" fill="url(#eye)"/>
+    <ellipse cx="244" cy="290" rx="10" ry="14" fill="#FFFFFF" opacity="0.9"/>
+    <ellipse cx="348" cy="305" rx="34" ry="50" fill="url(#eye)"/>
+    <ellipse cx="340" cy="290" rx="10" ry="14" fill="#FFFFFF" opacity="0.9"/>
+
+    <!-- worry brows above eyes -->
+    <path d="M 218 240 Q 252 258 286 240" stroke="#1A1A1A" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 314 240 Q 348 258 382 240" stroke="#1A1A1A" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- cheek blush (softer) -->
+    <ellipse cx="180" cy="380" rx="22" ry="12" fill="#FF8FA3" opacity="0.4"/>
+    <ellipse cx="420" cy="380" rx="22" ry="12" fill="#FF8FA3" opacity="0.4"/>
+  </g>
+
+  <!-- tuft tilted forward / droopy -->
+  <g transform="translate(300 120) rotate(-22)">
+    <path d="M 0 0 Q -32 -55 -8 -110 Q 6 -75 30 -55 Q 18 -25 0 0 Z" fill="url(#tuft)" stroke="#5A3A0E" stroke-width="2" stroke-opacity="0.5"/>
+  </g>
+</svg>
